@@ -24,4 +24,15 @@ describe('Login e registro de usuarios alura pic', () => {
         cy.get('input[formcontrolname="email"]').type('thais');
         cy.contains('ap-vmessage', 'Invalid e-mail').should('be.visible');
     })
+
+    
+    it('verifica mensagens de senha om menos de 8 caracteres', () => {
+        cy.contains('a', 'Register now').click();
+        cy.contains('button', 'Register').click();
+        cy.get('input[formcontrolname="password"]').type('123');
+        cy.contains('ap-vmessage', 'Mininum length is 8').should('be.visible');
+        cy.contains('button', 'Register').click();
+    })
+
+    
 })
