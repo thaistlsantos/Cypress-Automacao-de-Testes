@@ -1,0 +1,17 @@
+{
+  "name": "cypress-automacao-de-testes",
+  "version": "1.0.0",
+  "description": "Primeiro projeto com Cypress",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cypress open"
+  },
+  "keywords": [
+    "cypress"
+  ],
+  "author": "Thais de Lima Santos",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^12.6.0"
+  }
+}
