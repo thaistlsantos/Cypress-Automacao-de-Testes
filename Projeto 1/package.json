@@ -4,7 +4,7 @@
   "description": "Primeiro projeto com Cypress",
   "main": "index.js",
   "scripts": {
-    "test": "npx cypress open"
+    "test": "npx cypress open now"
   },
   "author": "Thaís de Lima Santos",
   "license": "ISC",
