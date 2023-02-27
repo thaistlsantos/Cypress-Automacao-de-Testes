@@ -16,17 +16,4 @@ describe('alura busca cursos', () => {
         cy.get('h4.busca-resultado-nome').should('contain', 'Formação Java e Orientação a Objetos');
     })
 
-    it('', () => {
-        
-    });
-    
-
-    it('', () => {
-        
-    });
-
-    
-
-
-
 })
