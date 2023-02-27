@@ -1,0 +1,20 @@
+[
+    {
+        "fullName": "Matteo Moura",
+        "userName": "matteo",
+        "email": "matteo@teste.com",
+        "password": "12345678"
+    },
+    {
+        "fullName": "Ana Beatriz",
+        "userName": "anabia",
+        "email": "anabia@teste.com",
+        "password": "12345678"
+    },
+    {
+        "fullName": "Marcella Carvalho",
+        "userName": "massela",
+        "email": "massela@teste.com",
+        "password": "12345678"
+    }
+]

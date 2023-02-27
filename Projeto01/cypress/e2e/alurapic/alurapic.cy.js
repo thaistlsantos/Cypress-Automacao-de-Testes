@@ -87,17 +87,32 @@ describe('Login e registro de usuarios alura pic', () => {
     })
 
 
-    
-    it.only('fazer login de usuario valido', () => {
+
+    it('fazer login de usuario valido', () => {
         cy.login('flavio', '123');
         cy.contains('a', '(Logout)').should('be.visible');
     })
 
 
-    it.only('fazer login de usuario invalido', () => {
+    it('fazer login de usuario invalido', () => {
         cy.login('flavio', '1234');
-        cy.on('window:alert', (str) => {
+        cy.on ('window:alert', (str) => {
             expect(str).to.equal('Invalid user name or password')
-        }
+        })
     }) 
+
+
+    it.only('registra usuário corretamente', () => { 
+        cy.fixture('usuarios').then((userData)=> {
+            for(var i = 0; i < userData.length; i++){
+                cy.contains('a', 'Register now').click();
+                cy.get('input[formcontrolname="email"]').type(userData[i].email);
+                cy.get('input[formcontrolname="fullName"]').type(userData[i].fullName);
+                cy.get('input[formcontrolname="userName"]').type(userData[i].userName);
+                cy.get('input[formcontrolname="password"]').type(userData[i].password);
+                cy.contains('button', 'Register').click();
+                cy.visit('https://alura-fotos.herokuapp.com/#/home');
+            }
+        })
+    })
 })
