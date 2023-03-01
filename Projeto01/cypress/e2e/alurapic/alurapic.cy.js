@@ -102,7 +102,7 @@ describe('Login e registro de usuarios alura pic', () => {
     }) 
 
 
-    it.only('registra usuário corretamente', () => { 
+/*     it.only('registra usuário corretamente', () => { 
         cy.fixture('usuarios').then((userData)=> {
             for(var i = 0; i < userData.length; i++){
                 cy.contains('a', 'Register now').click();
@@ -114,5 +114,19 @@ describe('Login e registro de usuarios alura pic', () => {
                 cy.visit('https://alura-fotos.herokuapp.com/#/home');
             }
         })
+    }) */
+
+    const usuarios = require('../../fixtures/usuarios.json');
+    usuarios.forEach(usuario => {
+        it('registra usuário corretamente', () => { 
+            cy.contains('a', 'Register now').click();
+            cy.get('input[formcontrolname="email"]').type(usuario.email);
+            cy.get('input[formcontrolname="fullName"]').type(usuario.fullName);
+            cy.get('input[formcontrolname="userName"]').type(usuario.userName);
+            cy.get('input[formcontrolname="password"]').type(usuario.password);
+            cy.contains('button', 'Register').click();
+            cy.visit('https://alura-fotos.herokuapp.com/#/home');
+        })
     })
+         
 })
