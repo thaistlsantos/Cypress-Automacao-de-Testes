@@ -1,8 +1,9 @@
-const { expect } = require("chai");
-const cypress = require("cypress");
+//onst { expect } = require("chai");
+//const cypress = require("cypress");
 
 
 describe("Buscar fotos e dados", () => {
+    
     it("Buscar fotos do Flávio", () => {
         cy.request({
             method: "GET",
