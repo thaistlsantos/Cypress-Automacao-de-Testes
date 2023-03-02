@@ -1,4 +1,4 @@
-//onst { expect } = require("chai");
+//const { expect } = require("chai");
 //const cypress = require("cypress");
 
 
@@ -19,11 +19,11 @@ describe("Buscar fotos e dados", () => {
     });
 
 
-    it("Buscar fotos do Flávio", () => {
+    it("Fazer login do Flávio", () => {
         cy.request({
-            method: "GET",
-            url: "https://apialurapic.herokuapp.com/flavio/photos",
-            body: Cypress.env()
+            method: "POST",
+            url: "https://apialurapic.herokuapp.com/user/login",
+            body: Cypress.env() 
         }).then((res) => {
             expect(res.status).to.be.equal(200); // Verificar a chamada da request
             expect(res.body).is.not.empty; // Verificar se o corpo da resposta tem informações
